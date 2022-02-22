@@ -34,7 +34,7 @@ public class PlayerShipController : MonoBehaviour
         _score = GameObject.FindGameObjectWithTag("GameManager");
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         Move();        
     }
@@ -53,6 +53,16 @@ public class PlayerShipController : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, StepToLeft(), _speed * Time.deltaTime);
                 transform.rotation = Quaternion.Euler(0, 180, -_angleRotate);
             }
+        }
+        else if (Input.GetKey(KeyCode.A) & transform.position.x > _leftBoard)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, StepToLeft(), _speed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, 180, -_angleRotate);
+        }
+        else if (Input.GetKey(KeyCode.D) & transform.position.x < _rightBoard)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, StepToRight(), _speed * Time.deltaTime);
+            transform.rotation = Quaternion.Euler(0, 180, _angleRotate);
         }
         else
         {

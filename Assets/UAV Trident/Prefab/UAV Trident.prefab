@@ -216,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 100
   _angleRotate: 30
-  _step: 0.05
+  _step: 1
 --- !u!114 &1463201621481099698
 MonoBehaviour:
   m_ObjectHideFlags: 0

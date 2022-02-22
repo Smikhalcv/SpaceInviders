@@ -17,10 +17,12 @@ public class LIfePlayerShip : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(collision.gameObject.GetComponent<LifeEnemy>().Damage);
+            Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
             TakeDamage(collision.gameObject.GetComponent<EnemyBullet>().Damage);
+            Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Heal"))
         {
