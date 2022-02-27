@@ -7,6 +7,13 @@ public class LIfePlayerShip : MonoBehaviour
     [SerializeField] private int _healthPoints;
     public int HealthPoints { get { return _healthPoints; } }
 
+    private AudioSource _soundTakeDamage;
+
+    private void Start()
+    {
+        _soundTakeDamage = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         CheckCountLifePoint();
@@ -35,6 +42,7 @@ public class LIfePlayerShip : MonoBehaviour
     private void TakeDamage(int damage)
     {
         _healthPoints -= damage;
+        _soundTakeDamage.Play();
     }
 
     private void CheckCountLifePoint()

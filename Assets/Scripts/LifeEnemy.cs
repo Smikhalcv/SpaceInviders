@@ -14,6 +14,8 @@ public class LifeEnemy : MonoBehaviour
 
     private GameObject _score;
 
+    [SerializeField] private GameObject _soundExplosion;
+
     private void Start()
     {
         _score = GameObject.FindGameObjectWithTag("GameManager");
@@ -39,6 +41,10 @@ public class LifeEnemy : MonoBehaviour
         {
             _score.GetComponent<GameManager>().ScorePlayer += 100;
             DropBooster();
+
+            GameObject explosion = Instantiate<GameObject>(_soundExplosion);
+            explosion.transform.position = transform.position;
+
             Destroy(gameObject);
         }
     }
@@ -48,7 +54,7 @@ public class LifeEnemy : MonoBehaviour
         System.Random _rnd = new System.Random();
         if (_rnd.Next(100) < _chanceDropBooster)
         {
-            GameObject booster = new GameObject();
+            GameObject booster;
             if (_rnd.Next(2) == 0)
             {
                 booster = Instantiate<GameObject>(_speedBooster);

@@ -15,24 +15,40 @@ public class GameManager : MonoBehaviour
     private GameObject _createrEnemy;
     [SerializeField] private int _thresholdDifficulty;
 
-    void Start()
+    private bool _deadPlayer = false;
+    [SerializeField] private GameObject _finalMenu;
+    [SerializeField] private GameObject _menu;
+
+    private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
         _createrEnemy = GameObject.FindWithTag("EnemyCreater");
+        Time.timeScale = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        CheckHealthPlayer();
+        
         UpdateScore();
         ImproveDifdiculytGame();
+        if (_deadPlayer)
+        {
+            DeadPlayer();
+        }
+        else
+        {
+            CheckHealthPlayer();
+        }
     }
 
     private void CheckHealthPlayer()
     {
         _healthPlayer = _player.gameObject.GetComponent<LIfePlayerShip>().HealthPoints;
         HealthPlayerText.text = _healthPlayer.ToString();
+        if (_healthPlayer <= 0)
+        {
+            _deadPlayer = true;
+        }
     }
 
     private void UpdateScore()
@@ -46,5 +62,12 @@ public class GameManager : MonoBehaviour
     private void ImproveDifdiculytGame()
     {
         _createrEnemy.GetComponent<EnemyCreater>().ImproveHealthPoints = (int)Mathf.Round(ScorePlayer / _thresholdDifficulty) + 1;
+    }
+
+    private void DeadPlayer()
+    {
+        Time.timeScale = 0;
+        _finalMenu.SetActive(true);
+        _menu.SetActive(false);
     }
 }

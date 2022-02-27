@@ -8,10 +8,12 @@ public class Weapon : MonoBehaviour
     private GameObject _bullet;
     [SerializeField] private float _timerToShot;
     private float _timer;
+    private AudioSource _soundShotPlayer;
 
     private void Start()
     {
         _timer = _timerToShot;
+        _soundShotPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class Weapon : MonoBehaviour
     {
         _bullet = Instantiate(_prefabBullet);
         _bullet.transform.position = transform.position;
+        _soundShotPlayer.Play();
     }
 
     public void BoostAttackSpeed(float boost)

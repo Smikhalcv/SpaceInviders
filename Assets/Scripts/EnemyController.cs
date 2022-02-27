@@ -25,6 +25,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private GameObject _enemyBullet;
     [SerializeField] private int _chanceShooting;
 
+    private AudioSource _soundShot;
+
 
     private void Start()
     {
@@ -37,6 +39,7 @@ public class EnemyController : MonoBehaviour
 
         _player = GameObject.FindGameObjectWithTag("Player");
 
+        _soundShot = GetComponent<AudioSource>();
     }
 
 
@@ -96,7 +99,7 @@ public class EnemyController : MonoBehaviour
         bullet.GetComponent<EnemyBullet>().Target = _player.transform.position;
         System.Random _rnd = new System.Random();
         _timerToShot = _rnd.Next(_minTimeToShot, _maxTimeToShot);
-        Debug.Log(_timerToShot);
+        _soundShot.Play();
     }
 
     private void CheckGoOutDisplay()
