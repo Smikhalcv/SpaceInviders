@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class OnSound : MonoBehaviour
 {
-    private bool _status = true;
+    static private bool _status = true;
     private Button _button;
 
-    private void Start()
+    private void OnEnable()
     {
         _button = GetComponent<Button>();
 

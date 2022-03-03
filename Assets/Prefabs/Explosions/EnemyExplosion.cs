@@ -13,8 +13,6 @@ public class EnemyExplosion : MonoBehaviour
         _soundExplosion = GetComponent<AudioSource>();
         _timeLife = _soundExplosion.clip.length;
         _soundExplosion.Play();
-        Debug.Log(_timeLife);
-
     }
 
     private void Update()

@@ -66,8 +66,23 @@ public class GameManager : MonoBehaviour
 
     private void DeadPlayer()
     {
+        SaveBestScore();
         Time.timeScale = 0;
         _finalMenu.SetActive(true);
-        _menu.SetActive(false);
+        _menu.SetActive(false);        
+    }
+
+    private void SaveBestScore()
+    {
+        if (PlayerPrefs.HasKey("BestScore"))
+        {
+            if (PlayerPrefs.GetInt("BestScore") < ScorePlayer)
+            {
+                PlayerPrefs.SetInt("BestScore", ScorePlayer);
+            }
+        }
+        else PlayerPrefs.SetInt("BestScore", ScorePlayer);
+
+
     }
 }
