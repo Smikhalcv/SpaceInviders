@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 0dd71a79ef5cb684aaeb01c1e4f5bf5c, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -319,7 +319,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: ce87cec3b0e8fbc43b04ef7d953bdaba, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -3145,7 +3145,6 @@ MonoBehaviour:
   - {fileID: 1062015658370612, guid: e18a33b201b7d4b41a22a039bc5602bb, type: 3}
   _timeToNewWave: 10
   _countEnemyInWave: 6
-  ImproveHealthPoints: 0
 --- !u!1 &1795103712
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,6 +3271,8 @@ MonoBehaviour:
   ScorePlayerText: {fileID: 554825132}
   HealthPlayerText: {fileID: 2105987171}
   _thresholdDifficulty: 5000
+  _boostDifficulty: 10000
+  _boostHealthPoint: 3
   _finalMenu: {fileID: 1828235168}
   _menu: {fileID: 377768018}
 --- !u!114 &1796899228

@@ -7,7 +7,7 @@ public class EnemyCreater : MonoBehaviour
     private float _timerNewWave;
     [SerializeField] private float _countEnemyInWave;
 
-    public int ImproveHealthPoints;
+    [SerializeField] static public int ImproveHealthPoints;
 
     private System.Random rnd;
 

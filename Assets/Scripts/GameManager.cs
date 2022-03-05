@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Score Player")] 
     public int ScorePlayer;
     private int _healthPlayer;
     public Text ScorePlayerText;
@@ -12,17 +13,20 @@ public class GameManager : MonoBehaviour
 
     private GameObject _player;
 
-    private GameObject _createrEnemy;
+    [Header("Setting Difficulty")]
     [SerializeField] private int _thresholdDifficulty;
+    [SerializeField] private int _boostDifficulty;
+    [SerializeField] private int _boostHealthPoint;
 
+    
     private bool _deadPlayer = false;
+    [Header("GUI")]
     [SerializeField] private GameObject _finalMenu;
     [SerializeField] private GameObject _menu;
 
     private void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
-        _createrEnemy = GameObject.FindWithTag("EnemyCreater");
         Time.timeScale = 1;
     }
 
@@ -61,7 +65,8 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void ImproveDifdiculytGame()
     {
-        _createrEnemy.GetComponent<EnemyCreater>().ImproveHealthPoints = (int)Mathf.Round(ScorePlayer / _thresholdDifficulty) + 1;
+        EnemyCreater.ImproveHealthPoints = 1 + (int)Mathf.Round(ScorePlayer / _thresholdDifficulty) +
+            (int)Mathf.Round(ScorePlayer / _boostDifficulty) * _boostHealthPoint;
     }
 
     private void DeadPlayer()
