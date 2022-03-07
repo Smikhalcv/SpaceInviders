@@ -6,7 +6,8 @@ public class Weapon : MonoBehaviour
 {
     [SerializeField] private GameObject _prefabBullet;
     private GameObject _bullet;
-    [SerializeField] private float _timerToShot;
+    static private float _timerToShot = 2f;
+    static public float TimerToShot { get { return _timerToShot; } set { _timerToShot = value; } }
     private float _timer;
     private AudioSource _soundShotPlayer;
 
@@ -16,7 +17,6 @@ public class Weapon : MonoBehaviour
         _soundShotPlayer = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         _timer -= Time.deltaTime;
@@ -37,6 +37,5 @@ public class Weapon : MonoBehaviour
     public void BoostAttackSpeed(float boost)
     {
         _timerToShot *= boost;
-        Debug.Log(_timerToShot);
     }
 }

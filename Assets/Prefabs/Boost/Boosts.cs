@@ -6,6 +6,7 @@ public class Boosts : MonoBehaviour
 {
     public float BoostAttackSpeed = 0.95f;
     public int Heal = 100;
+    public int BoostAttackPower = 50;
     [SerializeField] private float _speed;
     [SerializeField] private float _boardPos;
 

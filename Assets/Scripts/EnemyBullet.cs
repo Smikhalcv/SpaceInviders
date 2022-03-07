@@ -17,7 +17,7 @@ public class EnemyBullet : MonoBehaviour
     private void Start()
     {
         transform.LookAt(_target);
-        transform.rotation = Quaternion.Euler(90, 0, 0);
+        transform.rotation = Quaternion.Euler(-90, transform.rotation.eulerAngles.y, 0);
         _direction = (_target - transform.position).normalized;
         _bulletRig = GetComponent<Rigidbody>();
     }
@@ -34,6 +34,7 @@ public class EnemyBullet : MonoBehaviour
 
     public void MoveToTarget()
     {
+        
         _bulletRig.AddForce(_direction * Speed, ForceMode.VelocityChange);
     }
 }

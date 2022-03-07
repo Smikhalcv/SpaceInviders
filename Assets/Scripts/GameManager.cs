@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void CheckHealthPlayer()
     {
-        _healthPlayer = _player.gameObject.GetComponent<LIfePlayerShip>().HealthPoints;
+        _healthPlayer = LIfePlayerShip.HealthPoints;
         HealthPlayerText.text = _healthPlayer.ToString();
         if (_healthPlayer <= 0)
         {

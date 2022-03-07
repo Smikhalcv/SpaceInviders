@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LIfePlayerShip : MonoBehaviour
 {
-    [SerializeField] private int _healthPoints;
-    public int HealthPoints { get { return _healthPoints; } }
+    static private int _healthPoints = 1000;
+    static public int HealthPoints { get { return _healthPoints; } set { _healthPoints = value; } }
 
     private AudioSource _soundTakeDamage;
 
@@ -31,12 +31,6 @@ public class LIfePlayerShip : MonoBehaviour
             TakeDamage(collision.gameObject.GetComponent<EnemyBullet>().Damage);
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.CompareTag("Heal"))
-        {
-            int _heal = collision.gameObject.GetComponent<Boosts>().Heal;
-            Heal(_heal);
-            Destroy(collision.gameObject);
-        }
     }
 
     private void TakeDamage(int damage)
@@ -51,10 +45,5 @@ public class LIfePlayerShip : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Heal(int heal)
-    {
-        _healthPoints += heal;
     }
 }

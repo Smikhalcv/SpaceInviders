@@ -120,9 +120,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthPoints: 300
-  _speedBooster: {fileID: 3001382850757750526, guid: 46167e736380c7640a9846cf19a7fe15, type: 3}
-  _healBooster: {fileID: 1796960581801499135, guid: 21c1b14f56b952a428afcc17493df06d, type: 3}
-  _chanceDropBooster: 30
+  _boosts:
+  - {fileID: 1796960581801499135, guid: 21c1b14f56b952a428afcc17493df06d, type: 3}
+  - {fileID: 2057300911515122163, guid: 377c2b2acf6ce0d46a4a7e251946cd57, type: 3}
+  - {fileID: 3001382850757750526, guid: 46167e736380c7640a9846cf19a7fe15, type: 3}
+  _chanceDropBooster: 10
   _damage: 300
   _soundExplosion: {fileID: 6135049350822098410, guid: ba9c2669139622a4e9884308f7f23a55, type: 3}
 --- !u!54 &8157310818903499717

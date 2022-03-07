@@ -6,8 +6,9 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _timeLife;
-    [SerializeField] private int _damage;
-    public int Damage { get { return _damage; } }
+    static private int _damage = 100;
+    static public int Damage { get { return _damage; } set { _damage = value; } }
+
 
     private void Update()
     {
@@ -18,6 +19,15 @@ public class Bullet : MonoBehaviour
     private void Move()
     {
         transform.Translate(transform.forward * _speed);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyBullet"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 
 }
