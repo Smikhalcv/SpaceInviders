@@ -9,15 +9,10 @@ public class PlayerShipController : MonoBehaviour
     [SerializeField] private float _speed;
     private float _rightBoard, _leftBoard;
     [SerializeField] private float _angleRotate;
-    private Vector3 _pos;
 
     private Vector3 _rightPoint;
     private Vector3 _leftPoint;
     [SerializeField] private float _step;
-
-    private GameObject[] _weapons;
-
-    private GameObject _score;
 
     private void Start()
     {
@@ -28,10 +23,6 @@ public class PlayerShipController : MonoBehaviour
         _rightPoint.x = _rightBoard;
         _leftPoint = transform.position;
         _leftPoint.x = _leftBoard;
-
-        _weapons = GameObject.FindGameObjectsWithTag("Weapon");
-
-        _score = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     private void Update()
@@ -67,20 +58,6 @@ public class PlayerShipController : MonoBehaviour
         else
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("BoostAttackSpeed"))
-        {
-            for (int i = 0;  i < _weapons.Length; i++)
-            {
-                float boost = collision.gameObject.GetComponent<Boosts>().BoostAttackSpeed;
-                _weapons[i].GetComponent<Weapon>().BoostAttackSpeed(boost);
-            }
-            _score.GetComponent<GameManager>().ScorePlayer += 100; 
-            Destroy(collision.gameObject);
         }
     }
 

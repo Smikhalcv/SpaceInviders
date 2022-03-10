@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: de5b2918df6b5cf439848f27451e4f9f, type: 2}
+  - {fileID: 2100000, guid: b475505015587af40a7d04c183173bb1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,11 +109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0fb1559e2c9334d9ae86662e687d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoostAttackSpeed: 0.95
-  Heal: 100
-  BoostAttackPower: 50
   _speed: 10
   _boardPos: -110
+  _valueIncScore: 100
+  _boostAttackSpeed: 0.95
 --- !u!1 &7851699403190184492
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +155,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0.31051922, g: 0.990566, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 1, a: 1}
   m_Intensity: 30
   m_Range: 50
   m_SpotAngle: 30

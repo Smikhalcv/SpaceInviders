@@ -5,9 +5,11 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private GameObject _prefabBullet;
+    [SerializeField] private int _damage;
+    public int Damage { get { return _damage; } set { _damage = value; } }
     private GameObject _bullet;
-    static private float _timerToShot = 2f;
-    static public float TimerToShot { get { return _timerToShot; } set { _timerToShot = value; } }
+    private float _timerToShot = 2f;
+    public float TimerToShot { get { return _timerToShot; } set { _timerToShot = value; } }
     private float _timer;
     private AudioSource _soundShotPlayer;
 
@@ -30,12 +32,8 @@ public class Weapon : MonoBehaviour
     private void Shot()
     {
         _bullet = Instantiate(_prefabBullet);
+        _bullet.GetComponent<Bullet>().Damage = _damage;
         _bullet.transform.position = transform.position;
         _soundShotPlayer.Play();
-    }
-
-    public void BoostAttackSpeed(float boost)
-    {
-        _timerToShot *= boost;
     }
 }

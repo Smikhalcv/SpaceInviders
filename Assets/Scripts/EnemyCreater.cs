@@ -15,7 +15,6 @@ public class EnemyCreater : MonoBehaviour
     private void Start()
     {
         _timerNewWave = _timeToNewWave;
-        Debug.Log(_shipsEnemy.Length);
         rnd = new System.Random();
     }
 

@@ -13,7 +13,7 @@ public class Scenes : MonoBehaviour
     public void Restart()
     {
         Debug.Log(SceneManager.sceneCount);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(1);
     }
 
     public void Exit()

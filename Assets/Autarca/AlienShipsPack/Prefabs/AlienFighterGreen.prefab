@@ -30,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089099125859580}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &33216508653316524
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthPoints: 300
   _boosts:
-  - {fileID: 1796960581801499135, guid: 21c1b14f56b952a428afcc17493df06d, type: 3}
+  - {fileID: 3844780816732327746, guid: 21c1b14f56b952a428afcc17493df06d, type: 3}
   - {fileID: 2057300911515122163, guid: 377c2b2acf6ce0d46a4a7e251946cd57, type: 3}
   - {fileID: 3001382850757750526, guid: 46167e736380c7640a9846cf19a7fe15, type: 3}
   _chanceDropBooster: 10

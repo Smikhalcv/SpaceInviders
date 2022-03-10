@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boosts : MonoBehaviour
-{
-    public float BoostAttackSpeed = 0.95f;
-    public int Heal = 100;
-    public int BoostAttackPower = 50;
-    [SerializeField] private float _speed;
-    [SerializeField] private float _boardPos;
+{   
+    [SerializeField] protected private float _speed;
+    [SerializeField] protected private float _boardPos;
+    [SerializeField] protected private int _valueIncScore;
+
 
     private void Update()
     {
@@ -22,5 +21,10 @@ public class Boosts : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    protected private void IncreaseScore(GameObject player)
+    {
+        player.GetComponent<LifePlayerShip>().Score += _valueIncScore;
     }
 }

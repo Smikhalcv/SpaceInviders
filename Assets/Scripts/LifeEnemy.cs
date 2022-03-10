@@ -11,13 +11,13 @@ public class LifeEnemy : MonoBehaviour
     [SerializeField] private int _damage;
     public int Damage { get { return _damage; } }
 
-    private GameObject _score;
-
     [SerializeField] private GameObject _soundExplosion;
+
+    private GameObject _player;
 
     private void Start()
     {
-        _score = GameObject.FindGameObjectWithTag("GameManager");
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -29,7 +29,7 @@ public class LifeEnemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PlayerBullet"))
         {
-            TakeDamage(Bullet.Damage);
+            TakeDamage(collision.gameObject.GetComponent<Bullet>().Damage);
             Destroy(collision.gameObject);
         }
     }
@@ -38,7 +38,7 @@ public class LifeEnemy : MonoBehaviour
     {
         if (_healthPoints <= 0)
         {
-            _score.GetComponent<GameManager>().ScorePlayer += 100;
+            _player.GetComponent<LifePlayerShip>().Score += 100;
             DropBooster();
 
             GameObject explosion = Instantiate<GameObject>(_soundExplosion);

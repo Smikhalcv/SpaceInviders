@@ -230,7 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58bac0fe5e305944af2d62ba3eb71a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthPoints: 1000
 --- !u!82 &709319849864183637
 AudioSource:
   m_ObjectHideFlags: 0
@@ -372,7 +371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabBullet: {fileID: 2400303958042875547, guid: 948de356ea0ff414ab572d0d0e9cc6ef, type: 3}
-  _timerToShot: 2
+  _damage: 100
 --- !u!82 &9117180270882309219
 AudioSource:
   m_ObjectHideFlags: 0
@@ -547,7 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabBullet: {fileID: 2400303958042875547, guid: 948de356ea0ff414ab572d0d0e9cc6ef, type: 3}
-  _timerToShot: 2
+  _damage: 100
 --- !u!82 &4628963874973365327
 AudioSource:
   m_ObjectHideFlags: 0
@@ -689,7 +688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabBullet: {fileID: 2400303958042875547, guid: 948de356ea0ff414ab572d0d0e9cc6ef, type: 3}
-  _timerToShot: 2
+  _damage: 100
 --- !u!82 &4536231341064860991
 AudioSource:
   m_ObjectHideFlags: 0
