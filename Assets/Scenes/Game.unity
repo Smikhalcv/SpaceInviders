@@ -3577,6 +3577,7 @@ MonoBehaviour:
   _thresholdDifficulty: 5000
   _boostDifficulty: 15000
   _boostHealthPoint: 3
+  IsDead: 0
   _finalMenu: {fileID: 1828235168}
   _menu: {fileID: 377768018}
 --- !u!114 &1796899228

@@ -21,8 +21,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _boostDifficulty;
     [SerializeField] private int _boostHealthPoint;
 
-    
-    public  bool IsDead;
     [Header("GUI")]
     [SerializeField] private GameObject _finalMenu;
     [SerializeField] private GameObject _menu;
@@ -41,14 +39,7 @@ public class GameManager : MonoBehaviour
         UpdateAP();
         UpdateAS();
         ImproveDifdiculytGame();
-        if (IsDead)
-        {
-            DeadPlayer();
-        }
-        else
-        {
-            CheckHealthPlayer();
-        }
+        CheckHealthPlayer();
     }
 
     private void CheckHealthPlayer()
@@ -87,7 +78,7 @@ public class GameManager : MonoBehaviour
             (int)Mathf.Round(_scorePlayer / _boostDifficulty) * _boostHealthPoint;
     }
 
-    private void DeadPlayer()
+    public void DeadPlayer()
     {
         SaveBestScore();
         Time.timeScale = 0;

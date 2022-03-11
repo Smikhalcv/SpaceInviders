@@ -50,7 +50,7 @@ public class LifePlayerShip : MonoBehaviour
     {
         if (_healthPoints <= 0)
         {
-            _statusPlayer.IsDead = true;
+            _statusPlayer.DeadPlayer();
             Destroy(gameObject);
         }
     }
